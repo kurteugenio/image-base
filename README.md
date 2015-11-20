@@ -1,4 +1,6 @@
 # Spring XD base image
+Update to 1.3.0-RELEASE
+
 This serves as the basis of the other Spring XD images. End users need not interact with
 this docker image directly.
 
