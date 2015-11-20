@@ -1,13 +1,13 @@
 FROM java:7
-MAINTAINER Kurt Greiner
+MAINTAINER Eric Bottard
 
-
-ENV XD_BUILD release
-ENV XD_VERSION 1.3.0.RELEASE
+# 'snapshot' or 'release'
+ENV XD_BUILD snapshot
+ENV XD_VERSION 1.2.0.BUILD-SNAPSHOT
 
 RUN groupadd -r springxd && useradd -r -g springxd springxd
 
-RUN wget http://repo.spring.io/libs-milestone/org/springframework/xd/spring-xd/${XD_BUILD}/spring-xd-${XD_BUILD}-dist.zip \
+RUN wget http://repo.spring.io/${XD_BUILD}/org/springframework/xd/spring-xd/${XD_VERSION}/spring-xd-${XD_VERSION}-dist.zip \
       -O /opt/spring-xd-${XD_VERSION}-dist.zip \
     && unzip /opt/spring-xd-${XD_VERSION}-dist.zip -d /opt/ \
     && rm /opt/spring-xd-${XD_VERSION}-dist.zip \
